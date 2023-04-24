@@ -1,0 +1,12 @@
+langchain
+unstructured
+pandas
+chromadb
+pinecone-client
+docx2txt
+sacremoses
+sentence-transformers
+datasets
+pinecone-client[grpc]
+pinecone-datasets
+python-decouple
