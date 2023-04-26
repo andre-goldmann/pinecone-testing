@@ -6,9 +6,6 @@ from sentence_transformers import SentenceTransformer
 from tqdm.auto import tqdm
 from decouple import config
 
-#def readDocfile():
-#    return docx2txt.process("C:\\Users\\agol\\github\\pinecone-testing\\data\\Strategic_Alignment_Process.docx")
-
 index_name = 'keyword-search'
 
 def insertData(pathToDocs):
@@ -55,7 +52,6 @@ def insertData(pathToDocs):
         api_key=config('PINECONE_API_KEY'),  # find at app.pinecone.io
         environment=config('PINECONE_ENVIRONMENT') # next to api key in console
     )
-    #deletIndex()
 
     if index_name not in pinecone.list_indexes():
         pinecone.create_index(
@@ -90,5 +86,5 @@ def deletIndex():
     pinecone.delete_index(index_name)
 
 if __name__ == '__main__':
-    #deletIndex()
-    insertData("C:\\Users\\agol\\github\\pinecone-testing\\data\\Strategic_Alignment_Process.docx")
+    pathToWordFile = "C:\\Users"
+    insertData(pathToWordFile + "\\Strategic_Alignment_Process.docx")
